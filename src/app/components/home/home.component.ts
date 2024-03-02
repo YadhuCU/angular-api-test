@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   allRecipes: any[] = [];
   allRecipesGlobal: any[] = [];
   searchKey: string = '';
-  selections: string[] = ['Dinner', 'Snack', 'Lunch'];
+  selections: string[] = ['Dinner', 'Snack', 'Lunch', 'All'];
   page: number = 1;
 
   constructor(private api: ApiService) {}
@@ -27,6 +27,10 @@ export class HomeComponent implements OnInit {
   }
 
   sortRecipes(option: string) {
+    if (option === 'All') {
+      this.allRecipes = this.allRecipesGlobal;
+      return;
+    }
     this.allRecipes = this.allRecipesGlobal.filter((item) =>
       item.mealType.includes(option),
     );
