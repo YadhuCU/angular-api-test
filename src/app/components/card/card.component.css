@@ -1,0 +1,63 @@
+.tag {
+  padding-inline: 10px;
+  padding-block: 0px;
+  border: 1px solid #701a75;
+  color: #701a75;
+  background-color: #fae8ff;
+  border-radius: 100vw;
+  font-size: 0.75rem;
+}
+
+.cuisine {
+  padding-inline: 10px;
+  padding-block: 0px;
+  border: 1px solid #166534;
+  color: #166534;
+  background-color: #dcfce7;
+  border-radius: 100vw;
+  font-size: 0.75rem;
+}
+
+.meal-type {
+  padding-inline: 10px;
+  padding-block: 0px;
+  border: 1px solid #be123c;
+  color: #be123c;
+  background-color: #ffe4e6;
+  border-radius: 100vw;
+  font-size: 0.75rem;
+}
+
+.card {
+  width: 100%;
+  height: 400px;
+  perspective: 1000px;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+img {
+  transition: transform 0.8s;
+}
+.card:hover img {
+  transform: translateY(0px);
+}

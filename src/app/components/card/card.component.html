@@ -1,0 +1,45 @@
+<div class="card w-full rounded-xl bg-transparent">
+  <div class="card-inner shadow-lg">
+    <div class="card-front bg-green-50 pb-4">
+      <img
+        [src]="recipe.image"
+        alt="recipe image"
+        class="rounded-xl mx-auto shadow-2xl size-[200px] object-cover translate-y-[-1rem] hover:translate-y-0"
+      />
+      <div class="flex flex-col gap-2 justify-start px-4">
+        <h1 class="text-xl font-bold text-green-800">
+          {{ recipe.name }}
+        </h1>
+        <div class="flex flex-wrap gap-1">
+          <p *ngFor="let tag of recipe.tags" class="tag">{{ tag }}</p>
+          <p class="cuisine">{{ recipe.cuisine }}</p>
+          <p *ngFor="let type of recipe.mealType" class="meal-type">
+            {{ type }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="card-back flex flex-col gap-2 justify-start px-4 pb-4 bg-green-50"
+    >
+      <p class="text-slate-800 font-semibold">
+        Ingredients:
+        <span
+          *ngFor="let ingredients of recipe.ingredients"
+          class="text-slate-700 font-normal"
+        >
+          {{ ingredients }},
+        </span>
+      </p>
+      <p class="text-slate-800 font-semibold">
+        Instructions:
+        <span
+          *ngFor="let instruction of recipe.instructions"
+          class="text-slate-700 font-normal"
+        >
+          {{ instruction }}
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
